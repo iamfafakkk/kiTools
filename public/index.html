@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kiTools - Beranda</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">🔐 PHP Tools</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" data-page="home">🏠 Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="obfuscator.html" class="nav-link" data-page="obfuscator">🔒 PHP Obfuscator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="deobfuscator.html" class="nav-link" data-page="deobfuscator">🔓 PHP Deobfuscator</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>🔐 PHP Code Tools</h1>
+                <p>Suite lengkap untuk enkripsi dan dekripsi kode PHP</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="home-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🔒</span>
+                    <h3 class="feature-title">PHP Obfuscator</h3>
+                    <p class="feature-description">
+                        Enkripsi kode PHP Anda menggunakan algoritma AES-256-CBC. 
+                        Melindungi kode dari reverse engineering dengan multiple level enkripsi.
+                    </p>
+                    <button class="feature-button" onclick="window.location.href='obfuscator.html'">
+                        Mulai Enkripsi
+                    </button>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🔓</span>
+                    <h3 class="feature-title">PHP Deobfuscator</h3>
+                    <p class="feature-description">
+                        Dekripsi kode PHP yang telah dienkripsi sebelumnya. 
+                        Mengembalikan kode ke bentuk aslinya untuk editing atau debugging.
+                    </p>
+                    <button class="feature-button" onclick="window.location.href='deobfuscator.html'">
+                        Mulai Dekripsi
+                    </button>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">📊</span>
+                    <h3 class="feature-title">Fitur Advanced</h3>
+                    <p class="feature-description">
+                        • Multi-level encryption<br>
+                        • Validasi ukuran file<br>
+                        • Rekomendasi keamanan<br>
+                        • Progress tracking
+                    </p>
+                    <button class="feature-button" onclick="showAlert('Fitur advanced tersedia di semua tools!', 'info')">
+                        Pelajari Lebih Lanjut
+                    </button>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Level Maksimal</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Level Direkomendasikan</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1MB</div>
+                    <div class="stat-label">Ukuran File Maksimal</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+</body>
+</html>

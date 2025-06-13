@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kiTools - PHP Obfuscator</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">🔐 PHP Tools</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" data-page="home">🏠 Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="obfuscator.html" class="nav-link" data-page="obfuscator">🔒 PHP Obfuscator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="deobfuscator.html" class="nav-link" data-page="deobfuscator">🔓 PHP Deobfuscator</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- PHP Obfuscator Page -->
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>🔒 PHP Code Obfuscator</h1>
+                <p id="obfuscatorSubtitle">Enkripsi Kode PHP dengan AES-256-CBC</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <form id="obfuscatorForm">
+                <div class="form-group">
+                    <label for="phpCode">📝 Masukkan Kode PHP:</label>
+                    <textarea 
+                        id="phpCode" 
+                        name="code" 
+                        placeholder="<?php&#10;// Masukkan kode PHP Anda di sini&#10;echo 'Hello World!';&#10;// Contoh function&#10;function myFunction() {&#10;    return 'Secret Code';&#10;}&#10;?>"
+                        required></textarea>
+                    <small class="form-help info">
+                        💡 <strong>Tips:</strong> Kode akan dienkripsi menggunakan AES-256-CBC. Key enkripsi akan dihasilkan secara otomatis.
+                    </small>
+                </div>
+
+                <div class="level-info" id="levelInfo" style="display: none;">
+                    <strong>Level Enkripsi: <span class="level-badge" id="currentLevel">0</span></strong>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                    </div>
+                    <p>Semakin tinggi level, semakin sulit untuk di-decode.</p>
+                    <div id="levelWarning" style="display: none;"></div>
+                </div>
+
+                <div class="validation-panel" id="validationPanel" style="display: none;">
+                    <h4>📊 Informasi Validasi</h4>
+                    <div id="validationContent"></div>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn-primary" id="encryptBtn">
+                        🔒 Enkripsi Kode
+                    </button>
+                    <button type="button" class="btn-secondary" id="clearBtn">
+                        🗑️ Bersihkan
+                    </button>
+                    <button type="button" class="btn-secondary" id="copyBtn" style="display: none;">
+                        📋 Salin Hasil
+                    </button>
+                </div>
+            </form>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Mengenkripsi kode...</p>
+            </div>
+
+            <div id="result"></div>
+
+            <div class="stats" id="stats" style="display: none;">
+                <div class="stat-card">
+                    <div class="stat-number" id="originalSize">0</div>
+                    <div class="stat-label">Ukuran Asli (bytes)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="encryptedSize">0</div>
+                    <div class="stat-label">Ukuran Terenkripsi (bytes)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="encryptionLevel">0</div>
+                    <div class="stat-label">Level Enkripsi</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/obfuscator.js"></script>
+</body>
+</html>

@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kiTools - Beranda</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">🔐 PHP Tools</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" data-page="home">🏠 Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="obfuscator.html" class="nav-link" data-page="obfuscator">🔒 PHP Obfuscator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="deobfuscator.html" class="nav-link" data-page="deobfuscator">🔓 PHP Deobfuscator</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>🔐 PHP Code Tools</h1>
+                <p>Suite lengkap untuk enkripsi dan dekripsi kode PHP</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="home-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🔒</span>
+                    <h3 class="feature-title">PHP Obfuscator</h3>
+                    <p class="feature-description">
+                        Enkripsi kode PHP Anda menggunakan algoritma AES-256-CBC. 
+                        Melindungi kode dari reverse engineering dengan multiple level enkripsi.
+                    </p>
+                    <button class="feature-button" onclick="window.location.href='obfuscator.html'">
+                        Mulai Enkripsi
+                    </button>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🔓</span>
+                    <h3 class="feature-title">PHP Deobfuscator</h3>
+                    <p class="feature-description">
+                        Dekripsi kode PHP yang telah dienkripsi sebelumnya. 
+                        Mengembalikan kode ke bentuk aslinya untuk editing atau debugging.
+                    </p>
+                    <button class="feature-button" onclick="window.location.href='deobfuscator.html'">
+                        Mulai Dekripsi
+                    </button>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">📊</span>
+                    <h3 class="feature-title">Fitur Advanced</h3>
+                    <p class="feature-description">
+                        • Multi-level encryption<br>
+                        • Validasi ukuran file<br>
+                        • Rekomendasi keamanan<br>
+                        • Progress tracking
+                    </p>
+                    <button class="feature-button" onclick="showAlert('Fitur advanced tersedia di semua tools!', 'info')">
+                        Pelajari Lebih Lanjut
+                    </button>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Level Maksimal</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Level Direkomendasikan</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1MB</div>
+                    <div class="stat-label">Ukuran File Maksimal</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+</body>
+</html>
+
+        .form-help.info {
+            color: #17a2b8;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+            font-size: 16px;
+        }
+
+        .input-group input {
+            padding-left: 40px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        .level-info {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .level-badge {
+            background: #007bff;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+
+        .alert-warning {
+            background: #fff3cd;
+            border-color: #ffc107;
+            color: #856404;
+        }
+
+        .alert-info {
+            background: #d1ecf1;
+            border-color: #17a2b8;
+            color: #0c5460;
+        }
+
+        .validation-panel {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .recommendations {
+            background: #e9ecef;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .recommendations h4 {
+            margin: 0 0 10px 0;
+            color: #495057;
+        }
+
+        .recommendations ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .recommendations li {
+            margin: 5px 0;
+            color: #6c757d;
+        }
+
+        .level-warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .level-danger {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #28a745, #ffc107, #dc3545);
+            transition: width 0.3s ease;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-brand {
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 15px 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            margin: 0;
+        }
+
+        .nav-link {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 20px 25px;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-bottom-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-link.active {
+            background: rgba(255, 255, 255, 0.2);
+            border-bottom-color: white;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        /* Page Content Styles */
+        .page {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .page-loading {
+            opacity: 0.5;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .home-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e1e5e9;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .feature-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .feature-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .feature-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            button {
+                width: 100%;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                flex-direction: column;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-menu.show {
+                display: flex;
+            }
+
+            .nav-link {
+                padding: 15px 25px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-link:hover {
+                background: rgba(255, 255, 255, 0.1);
+                border-bottom-color: rgba(255, 255, 255, 0.1);
+            }
+
+            .home-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">🔐 PHP Tools</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a class="nav-link active" data-page="home">🏠 Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-page="obfuscator">🔒 PHP Obfuscator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-page="deobfuscator">🔓 PHP Deobfuscator</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <div class="container">
+            <div class="header">
+                <h1>🔐 PHP Code Tools</h1>
+                <p>Suite lengkap untuk enkripsi dan dekripsi kode PHP</p>
+            </div>
+
+            <div class="content">
+                <div class="home-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">🔒</span>
+                        <h3 class="feature-title">PHP Obfuscator</h3>
+                        <p class="feature-description">
+                            Enkripsi kode PHP Anda menggunakan algoritma AES-256-CBC. 
+                            Melindungi kode dari reverse engineering dengan multiple level enkripsi.
+                        </p>
+                        <button class="feature-button" onclick="showPage('obfuscator')">
+                            Mulai Enkripsi
+                        </button>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🔓</span>
+                        <h3 class="feature-title">PHP Deobfuscator</h3>
+                        <p class="feature-description">
+                            Dekripsi kode PHP yang telah dienkripsi sebelumnya. 
+                            Mengembalikan kode ke bentuk aslinya untuk editing atau debugging.
+                        </p>
+                        <button class="feature-button" onclick="showPage('deobfuscator')">
+                            Mulai Dekripsi
+                        </button>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">📊</span>
+                        <h3 class="feature-title">Fitur Advanced</h3>
+                        <p class="feature-description">
+                            • Multi-level encryption<br>
+                            • Validasi ukuran file<br>
+                            • Rekomendasi keamanan<br>
+                            • Progress tracking
+                        </p>
+                        <button class="feature-button" onclick="showAlert('Fitur advanced tersedia di semua tools!', 'info')">
+                            Pelajari Lebih Lanjut
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats" style="display: grid;">
+                    <div class="stat-card">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Level Maksimal</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Level Direkomendasikan</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1MB</div>
+                        <div class="stat-label">Ukuran File Maksimal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHP Obfuscator Page -->
+    <div id="obfuscator" class="page">
+        <div class="container">
+            <div class="header">
+                <h1>🔒 PHP Code Obfuscator</h1>
+                <p id="obfuscatorSubtitle">Enkripsi Kode PHP dengan AES-256-CBC</p>
+            </div>
+
+            <div class="content">
+                <form id="obfuscatorForm">
+                    <div class="form-group">
+                        <label for="phpCode">📝 Masukkan Kode PHP:</label>
+                        <textarea 
+                            id="phpCode" 
+                            name="code" 
+                            placeholder="<?php&#10;// Masukkan kode PHP Anda di sini&#10;echo 'Hello World!';&#10;// Contoh function&#10;function myFunction() {&#10;    return 'Secret Code';&#10;}&#10;?>"
+                            required></textarea>
+                        <small class="form-help info">
+                            💡 <strong>Tips:</strong> Kode akan dienkripsi menggunakan AES-256-CBC. Key enkripsi akan dihasilkan secara otomatis.
+                        </small>
+                    </div>
+
+                    <div class="level-info" id="levelInfo" style="display: none;">
+                        <strong>Level Enkripsi: <span class="level-badge" id="currentLevel">0</span></strong>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                        </div>
+                        <p>Semakin tinggi level, semakin sulit untuk di-decode.</p>
+                        <div id="levelWarning" style="display: none;"></div>
+                    </div>
+
+                    <div class="validation-panel" id="validationPanel" style="display: none;">
+                        <h4>📊 Informasi Validasi</h4>
+                        <div id="validationContent"></div>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn-primary" id="encryptBtn">
+                            🔒 Enkripsi Kode
+                        </button>
+                        <button type="button" class="btn-secondary" id="clearBtn">
+                            🗑️ Bersihkan
+                        </button>
+                        <button type="button" class="btn-secondary" id="copyBtn" style="display: none;">
+                            📋 Salin Hasil
+                        </button>
+                    </div>
+                </form>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Mengenkripsi kode...</p>
+                </div>
+
+                <div id="result"></div>
+
+                <div class="stats" id="stats" style="display: none;">
+                    <div class="stat-card">
+                        <div class="stat-number" id="originalSize">0</div>
+                        <div class="stat-label">Ukuran Asli (bytes)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="encryptedSize">0</div>
+                        <div class="stat-label">Ukuran Terenkripsi (bytes)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="encryptionLevel">0</div>
+                        <div class="stat-label">Level Enkripsi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHP Deobfuscator Page -->
+    <div id="deobfuscator" class="page">
+        <div class="container">
+            <div class="header">
+                <h1>🔓 PHP Code Deobfuscator</h1>
+                <p>Dekripsi kode PHP yang telah dienkripsi</p>
+            </div>
+
+            <div class="content">
+                <div class="alert alert-info">
+                    <strong>ℹ️ Panduan Dekripsi:</strong>
+                    Masukkan kode PHP yang telah dienkripsi menggunakan obfuscator ini beserta kunci dekripsi yang benar. Kunci dekripsi wajib diisi untuk keamanan.
+                </div>
+
+                <form id="deobfuscatorForm">
+                    <div class="form-group">
+                        <label for="encryptedPhpCode">📄 Masukkan Kode PHP Terenkripsi:</label>
+                        <textarea 
+                            id="encryptedPhpCode" 
+                            name="encryptedCode" 
+                            placeholder="<?php $encData = 'YourEncryptedDataHere...'; eval(openssl_decrypt($encData, 'aes-256-cbc', '123456', 0, 'ABCDEF0123456789')); ?>"
+                            required></textarea>
+                        <small class="form-help info">
+                            💡 <strong>Format yang didukung:</strong> Kode PHP yang dihasilkan oleh obfuscator ini (menggunakan openssl_decrypt).
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="decryptionKey">🔑 Kunci Dekripsi:</label>
+                        <div class="input-group">
+                            <span class="input-icon">🔐</span>
+                            <input 
+                                type="text" 
+                                id="decryptionKey" 
+                                name="key" 
+                                placeholder="Contoh: 123456 (key yang digunakan saat enkripsi)"
+                                required
+                                autocomplete="off"
+                                spellcheck="false">
+                        </div>
+                        <small class="form-help required">
+                            ⚠️ <strong>Wajib diisi:</strong> Masukkan key yang sama dengan yang digunakan saat enkripsi kode.
+                        </small>
+                        <small class="form-help info">
+                            💡 <strong>Tips:</strong> Key biasanya berupa angka 5-6 digit yang dihasilkan secara acak saat enkripsi.
+                        </small>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn-primary" id="decryptBtn">
+                            🔓 Dekripsi Kode
+                        </button>
+                        <button type="button" class="btn-secondary" id="clearDecryptBtn">
+                            🗑️ Bersihkan
+                        </button>
+                        <button type="button" class="btn-secondary" id="copyDecryptBtn" style="display: none;">
+                            📋 Salin Hasil
+                        </button>
+                    </div>
+                </form>
+
+                <div class="loading" id="decryptLoading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Mendekripsi kode...</p>
+                </div>
+
+                <div id="decryptResult"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Variables
+        let currentLevel = 0;
+        let lastEncryptedCode = '';
+        let appLimits = {};
+
+        // Navigation Functions
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show selected page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            // Update navigation active state
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Find and activate the corresponding nav link
+            const activeLink = document.querySelector(`[data-page="${pageId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+
+            // Update URL hash without page reload
+            if (pageId !== 'home') {
+                window.location.hash = pageId;
+            } else {
+                // Remove hash for home page
+                history.pushState("", document.title, window.location.pathname + window.location.search);
+            }
+
+            // Save current page to localStorage
+            localStorage.setItem('currentPage', pageId);
+
+            // Hide mobile menu if open
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.remove('show');
+
+            // Clear forms when switching pages
+            if (pageId === 'obfuscator') {
+                resetObfuscatorForm();
+            } else if (pageId === 'deobfuscator') {
+                resetDeobfuscatorForm();
+            }
+        }
+
+        // Function to handle page initialization on load/refresh
+        function initializePage() {
+            // Get page from URL hash or localStorage
+            let targetPage = window.location.hash.substring(1); // Remove # from hash
+            
+            if (!targetPage) {
+                // If no hash, check localStorage
+                targetPage = localStorage.getItem('currentPage') || 'home';
+            }
+
+            // Validate that the page exists
+            const validPages = ['home', 'obfuscator', 'deobfuscator'];
+            if (!validPages.includes(targetPage)) {
+                targetPage = 'home';
+            }
+
+            // Show the appropriate page
+            showPage(targetPage);
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener('hashchange', function() {
+            const pageId = window.location.hash.substring(1) || 'home';
+            showPage(pageId);
+        });
+
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('show');
+        }
+
+        function resetObfuscatorForm() {
+            currentLevel = 0;
+            lastEncryptedCode = '';
+            document.getElementById('phpCode').value = '';
+            document.getElementById('result').innerHTML = '';
+            document.getElementById('stats').style.display = 'none';
+            document.getElementById('levelInfo').style.display = 'none';
+            document.getElementById('validationPanel').style.display = 'none';
+            document.getElementById('copyBtn').style.display = 'none';
+            document.getElementById('encryptBtn').innerHTML = '🔒 Enkripsi Kode';
+            document.getElementById('encryptBtn').disabled = false;
+            hideAlert();
+        }
+
+        function resetDeobfuscatorForm() {
+            document.getElementById('encryptedPhpCode').value = '';
+            document.getElementById('decryptionKey').value = '';
+            document.getElementById('decryptResult').innerHTML = '';
+            document.getElementById('copyDecryptBtn').style.display = 'none';
+            hideAlert();
+        }
+
+        // Obfuscator Functions
+        document.getElementById('obfuscatorForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData();
+            const code = document.getElementById('phpCode').value;
+            
+            if (!code.trim()) {
+                showAlert('Kode PHP tidak boleh kosong!', 'error');
+                return;
+            }
+
+            formData.append('code', code);
+            formData.append('level', currentLevel);
+
+            showLoading(true);
+            hideAlert();
+
+            try {
+                const response = await fetch('/encrypt', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ code, level: currentLevel })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    displayResult(result.data);
+                    currentLevel = result.data.level;
+                    lastEncryptedCode = result.data.encryptedCode;
+                    updateStats(result.data);
+                    updateValidationInfo(result.data);
+                    showAlert('Kode berhasil dienkripsi!', 'success');
+                } else {
+                    showAlert(result.error || 'Terjadi kesalahan', 'error');
+                    if (result.validation) {
+                        updateValidationInfo({ validation: result.validation });
+                    }
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showAlert('Terjadi kesalahan koneksi', 'error');
+            } finally {
+                showLoading(false);
+            }
+        });
+
+        document.getElementById('clearBtn').addEventListener('click', function() {
+            document.getElementById('phpCode').value = '';
+            document.getElementById('result').innerHTML = '';
+            document.getElementById('stats').style.display = 'none';
+            document.getElementById('levelInfo').style.display = 'none';
+            document.getElementById('validationPanel').style.display = 'none';
+            document.getElementById('copyBtn').style.display = 'none';
+            currentLevel = 0;
+            lastEncryptedCode = '';
+            hideAlert();
+        });
+
+        document.getElementById('copyBtn').addEventListener('click', function() {
+            if (lastEncryptedCode) {
+                navigator.clipboard.writeText(lastEncryptedCode).then(function() {
+                    showAlert('Kode berhasil disalin ke clipboard!', 'success');
+                }).catch(function() {
+                    // Fallback for older browsers
+                    const textArea = document.createElement('textarea');
+                    textArea.value = lastEncryptedCode;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    showAlert('Kode berhasil disalin ke clipboard!', 'success');
+                });
+            }
+        });
+
+        // Deobfuscator Event Listeners
+        document.getElementById('deobfuscatorForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const encryptedCode = document.getElementById('encryptedPhpCode').value;
+            const key = document.getElementById('decryptionKey').value;
+            
+            if (!encryptedCode.trim()) {
+                showAlert('Kode PHP terenkripsi tidak boleh kosong!', 'error');
+                return;
+            }
+            
+            if (!key.trim()) {
+                showAlert('Kunci dekripsi wajib diisi dan tidak boleh kosong!', 'error');
+                return;
+            }
+
+            showDecryptLoading(true);
+            hideAlert();
+
+            try {
+                const formData = new FormData();
+                formData.append('encryptedCode', encryptedCode);
+                formData.append('key', key);
+
+                const response = await fetch('/decrypt', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        encryptedCode: encryptedCode,
+                        key: key
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    displayDecryptResult(result.data);
+                    showAlert('Kode berhasil didekripsi!', 'success');
+                } else {
+                    throw new Error(result.error || 'Gagal mendekripsi kode');
+                }
+                
+            } catch (error) {
+                console.error('Error decrypting code:', error);
+                showAlert(error.message || 'Terjadi kesalahan saat mendekripsi kode', 'error');
+            } finally {
+                showDecryptLoading(false);
+            }
+        });
+
+        document.getElementById('clearDecryptBtn').addEventListener('click', function() {
+            resetDeobfuscatorForm();
+        });
+
+        document.getElementById('copyDecryptBtn').addEventListener('click', function() {
+            const decryptedCode = document.getElementById('decryptedCodeOutput');
+            if (decryptedCode && decryptedCode.textContent) {
+                const textArea = document.createElement('textarea');
+                textArea.value = decryptedCode.textContent;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy').then(() => {
+                    document.body.removeChild(textArea);
+                    showAlert('Kode terdekripsi berhasil disalin ke clipboard!', 'success');
+                });
+            } else {
+                showAlert('Tidak ada kode untuk disalin', 'error');
+            }
+        });
+
+        function displayDecryptResult(data) {
+            const resultDiv = document.getElementById('decryptResult');
+            resultDiv.innerHTML = `
+                <div class="alert alert-success">
+                    <strong>✅ Dekripsi Berhasil!</strong>
+                </div>
+                
+                <div class="form-group">
+                    <label>Kode PHP Terdekripsi:</label>
+                    <textarea id="decryptedCodeOutput" readonly style="min-height: 200px; background-color: #f8f9fa;">${data.decryptedCode}</textarea>
+                </div>
+                
+                <div class="level-info">
+                    <h4>ℹ️ Informasi Dekripsi:</h4>
+                    <p><strong>Cipher yang digunakan:</strong> ${data.extractedInfo.cipher}</p>
+                    <p><strong>Key yang digunakan:</strong> ${data.extractedInfo.keyUsed}</p>
+                    <p><strong>IV:</strong> ${data.extractedInfo.iv}</p>
+                    <p><strong>Nama variabel:</strong> $${data.extractedInfo.variableName}</p>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number">${Math.round(data.stats.originalSize / 1024 * 100) / 100}KB</div>
+                        <div class="stat-label">Ukuran Terenkripsi</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">${Math.round(data.stats.decryptedSize / 1024 * 100) / 100}KB</div>
+                        <div class="stat-label">Ukuran Terdekripsi</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">${data.stats.compressionRatio}%</div>
+                        <div class="stat-label">Rasio Ukuran</div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('copyDecryptBtn').style.display = 'inline-block';
+        }
+
+        function showDecryptLoading(show) {
+            document.getElementById('decryptLoading').style.display = show ? 'block' : 'none';
+            document.getElementById('decryptBtn').disabled = show;
+        }
+
+        function displayResult(data) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+                <div class="form-group">
+                    <label for="encryptedCode">Kode Terenkripsi (Level ${data.level}):</label>
+                    <textarea id="encryptedCode" readonly>${data.encryptedCode}</textarea>
+                </div>
+            `;
+            
+            // Update form untuk enkripsi level berikutnya
+            document.getElementById('phpCode').value = data.encryptedCode;
+            document.getElementById('levelInfo').style.display = 'block';
+            document.getElementById('currentLevel').textContent = data.level;
+            
+            // Update progress bar
+            updateProgressBar(data.level);
+            
+            // Update button text
+            if (data.level >= appLimits.maxLevel) {
+                document.getElementById('encryptBtn').innerHTML = `🚫 Batas Maksimal Tercapai`;
+                document.getElementById('encryptBtn').disabled = true;
+            } else {
+                document.getElementById('encryptBtn').innerHTML = `🔒 Enkripsi ke Level ${data.level + 1}`;
+                document.getElementById('encryptBtn').disabled = false;
+            }
+            
+            document.getElementById('copyBtn').style.display = 'inline-block';
+        }
+
+        function updateValidationInfo(data) {
+            const validationPanel = document.getElementById('validationPanel');
+            const validationContent = document.getElementById('validationContent');
+            
+            if (!data.validation && !data.recommendations) {
+                validationPanel.style.display = 'none';
+                return;
+            }
+            
+            let content = '';
+            
+            // Tampilkan warnings jika ada
+            if (data.validation && data.validation.warnings.length > 0) {
+                content += '<div class="alert alert-warning"><strong>⚠️ Peringatan:</strong><ul>';
+                data.validation.warnings.forEach(warning => {
+                    content += `<li>${warning}</li>`;
+                });
+                content += '</ul></div>';
+            }
+            
+            // Tampilkan rekomendasi
+            if (data.recommendations && data.recommendations.length > 0) {
+                content += '<div class="recommendations"><h4>💡 Rekomendasi:</h4><ul>';
+                data.recommendations.forEach(rec => {
+                    content += `<li>${rec}</li>`;
+                });
+                content += '</ul></div>';
+            }
+            
+            // Tampilkan informasi ukuran file
+            if (data.validation) {
+                content += `
+                    <div class="alert alert-info">
+                        <strong>📊 Informasi File:</strong><br>
+                        Ukuran saat ini: ${Math.round(data.validation.codeSize / 1024)} KB<br>
+                        Estimasi setelah enkripsi: ${Math.round(data.validation.estimatedSize / 1024)} KB
+                    </div>
+                `;
+            }
+            
+            validationContent.innerHTML = content;
+            validationPanel.style.display = content ? 'block' : 'none';
+            
+            // Update level warning
+            updateLevelWarning(data.level || currentLevel);
+        }
+
+        function updateProgressBar(level) {
+            const progressFill = document.getElementById('progressFill');
+            const maxLevel = appLimits.maxLevel || 10;
+            const percentage = Math.min((level / maxLevel) * 100, 100);
+            progressFill.style.width = percentage + '%';
+        }
+
+        function updateLevelWarning(level) {
+            const levelWarning = document.getElementById('levelWarning');
+            const recommendedMax = appLimits.recommendedMaxLevel || 5;
+            const maxLevel = appLimits.maxLevel || 10;
+            
+            if (level >= maxLevel - 1) {
+                levelWarning.innerHTML = '<div class="level-danger">🚨 <strong>Peringatan:</strong> Anda hampir mencapai batas maksimal enkripsi!</div>';
+                levelWarning.style.display = 'block';
+            } else if (level >= recommendedMax) {
+                levelWarning.innerHTML = '<div class="level-warning">⚠️ <strong>Perhatian:</strong> Level enkripsi sudah cukup tinggi. Pertimbangkan untuk berhenti di sini.</div>';
+                levelWarning.style.display = 'block';
+            } else {
+                levelWarning.style.display = 'none';
+            }
+        }
+
+        function updateStats(data) {
+            document.getElementById('originalSize').textContent = new Blob([data.originalCode]).size;
+            document.getElementById('encryptedSize').textContent = new Blob([data.encryptedCode]).size;
+            document.getElementById('encryptionLevel').textContent = data.level;
+            document.getElementById('stats').style.display = 'grid';
+        }
+
+        function showLoading(show) {
+            document.getElementById('loading').style.display = show ? 'block' : 'none';
+            document.getElementById('encryptBtn').disabled = show;
+        }
+
+        function showAlert(message, type) {
+            hideAlert();
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type}`;
+            alertDiv.innerHTML = message;
+            alertDiv.id = 'alertMessage';
+            
+            const content = document.querySelector('.content');
+            content.insertBefore(alertDiv, content.firstChild);
+            
+            // Auto hide success messages
+            if (type === 'success') {
+                setTimeout(hideAlert, 3000);
+            }
+        }
+
+        function hideAlert() {
+            const alertDiv = document.getElementById('alertMessage');
+            if (alertDiv) {
+                alertDiv.remove();
+            }
+        }
+
+        // Load initial data
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                // Initialize page navigation
+                initializePage();
+                
+                // Add click event listeners to navigation links
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const pageId = this.getAttribute('data-page');
+                        showPage(pageId);
+                    });
+                });
+                
+                // Load app limits
+                const limitsResponse = await fetch('/api/limits');
+                appLimits = await limitsResponse.json();
+                
+                // Load app info
+                const response = await fetch('/api/info');
+                const info = await response.json();
+                console.log('PHP Code Obfuscator loaded:', info);
+                console.log('App limits:', appLimits);
+                
+                // Update header with limits info
+                const header = document.querySelector('.header p');
+                if (header) {
+                    header.innerHTML = `Enkripsi Kode PHP dengan AES-256-CBC<br>
+                        <small>Maksimal Level: ${appLimits.maxLevel} | Direkomendasikan: ${appLimits.recommendedMaxLevel} | Ukuran File Maks: ${appLimits.maxFileSizeFormatted}</small>`;
+                }
+                
+            } catch (error) {
+                console.error('Error loading app info:', error);
+                // Initialize page even if API calls fail
+                initializePage();
+                
+                // Add navigation event listeners
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const pageId = this.getAttribute('data-page');
+                        showPage(pageId);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

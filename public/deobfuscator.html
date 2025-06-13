@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kiTools - PHP Deobfuscator</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">🔐 PHP Tools</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" data-page="home">🏠 Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="obfuscator.html" class="nav-link" data-page="obfuscator">🔒 PHP Obfuscator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="deobfuscator.html" class="nav-link" data-page="deobfuscator">🔓 PHP Deobfuscator</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- PHP Deobfuscator Page -->
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>🔓 PHP Code Deobfuscator</h1>
+                <p>Dekripsi kode PHP yang telah dienkripsi</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="alert alert-info">
+                <strong>ℹ️ Panduan Dekripsi:</strong>
+                Masukkan kode PHP yang telah dienkripsi menggunakan obfuscator ini beserta kunci dekripsi yang benar. Kunci dekripsi wajib diisi untuk keamanan.
+            </div>
+
+            <form id="deobfuscatorForm">
+                <div class="form-group">
+                    <label for="encryptedPhpCode">📄 Masukkan Kode PHP Terenkripsi:</label>
+                    <textarea 
+                        id="encryptedPhpCode" 
+                        name="encryptedCode" 
+                        placeholder="<?php $encData = 'YourEncryptedDataHere...'; eval(openssl_decrypt($encData, 'aes-256-cbc', '123456', 0, 'ABCDEF0123456789')); ?>"
+                        required></textarea>
+                    <small class="form-help info">
+                        💡 <strong>Format yang didukung:</strong> Kode PHP yang dihasilkan oleh obfuscator ini (menggunakan openssl_decrypt).
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="decryptionKey">🔑 Kunci Dekripsi:</label>
+                    <div class="input-group">
+                        <span class="input-icon">🔐</span>
+                        <input 
+                            type="text" 
+                            id="decryptionKey" 
+                            name="key" 
+                            placeholder="Contoh: 123456 (key yang digunakan saat enkripsi)"
+                            required
+                            autocomplete="off"
+                            spellcheck="false">
+                    </div>
+                    <small class="form-help required">
+                        ⚠️ <strong>Wajib diisi:</strong> Masukkan key yang sama dengan yang digunakan saat enkripsi kode.
+                    </small>
+                    <small class="form-help info">
+                        💡 <strong>Tips:</strong> Key biasanya berupa angka 5-6 digit yang dihasilkan secara acak saat enkripsi.
+                    </small>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn-primary" id="decryptBtn">
+                        🔓 Dekripsi Kode
+                    </button>
+                    <button type="button" class="btn-secondary" id="clearDecryptBtn">
+                        🗑️ Bersihkan
+                    </button>
+                    <button type="button" class="btn-secondary" id="copyDecryptBtn" style="display: none;">
+                        📋 Salin Hasil
+                    </button>
+                </div>
+            </form>
+
+            <div class="loading" id="decryptLoading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Mendekripsi kode...</p>
+            </div>
+
+            <div id="decryptResult"></div>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/deobfuscator.js"></script>
+</body>
+</html>
