@@ -57,7 +57,7 @@ Sebelum menginstal aplikasi, pastikan sistem Anda memenuhi persyaratan berikut:
 
 1. **Clone repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/iamfafakkk/kiTools
    cd encrypToolsPhp
    ```
 
